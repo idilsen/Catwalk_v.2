@@ -52,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
                     //successfully logged in
                         Toast.makeText(LoginActivity.this, "Welcome back!", Toast.LENGTH_LONG).show();
                         //take user to homepage
-                        Intent takehome = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent takehome = new Intent(LoginActivity.this, DiscoverActivity.class);
                         startActivity(takehome);
 
                     }else{
