@@ -44,7 +44,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DiscoverActivity"
-            android:label="@string/title_activity_discover"
+            android:label="Discover"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".EditActivity"
+            android:label="Edit Profile"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

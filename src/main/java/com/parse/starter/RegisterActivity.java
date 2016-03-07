@@ -55,6 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
                             //signed up successfully
                             Toast.makeText(RegisterActivity.this, "You are signed up successfully:)", Toast.LENGTH_LONG).show();
                             //redirect to homepage
+
                             Intent takeUserHome = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(takeUserHome);
                             
