@@ -8,6 +8,7 @@
  */
 package com.parse.starter;
 
+import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.parse.ParseAnalytics;
+import com.parse.ParseUser;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -27,6 +29,16 @@ public class MainActivity extends ActionBarActivity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_homepage);
+
+    ParseUser currentUser = ParseUser.getCurrentUser();
+    if (currentUser != null) {
+      // show user's discover page
+
+    } else {
+      // show the signup or login screen
+      //Intent login = new Intent(MainActivity.this, LoginActivity.class);
+      //startActivity(login);
+    }
 
     ParseAnalytics.trackAppOpenedInBackground(getIntent());
     mSignupButton = (Button)findViewById(R.id.button);
@@ -49,7 +61,7 @@ public class MainActivity extends ActionBarActivity {
     });
   }
 
-  @Override
+  /*@Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
     getMenuInflater().inflate(R.menu.menu_main, menu);
@@ -69,5 +81,5 @@ public class MainActivity extends ActionBarActivity {
     }
 
     return super.onOptionsItemSelected(item);
-  }
+  }*/
 }
