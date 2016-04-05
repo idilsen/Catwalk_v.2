@@ -49,6 +49,10 @@
         <activity
             android:name=".EditActivity"
             android:label="Edit Profile"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
