@@ -50,10 +50,26 @@ public class LoginActivity extends AppCompatActivity {
                 public void done(ParseUser user, com.parse.ParseException e) {
                     if(e == null){
                     //successfully logged in
-                        Toast.makeText(LoginActivity.this, "Welcome back!", Toast.LENGTH_LONG).show();
-                        //take user to homepage
-                        Intent takehome = new Intent(LoginActivity.this, DiscoverActivity.class);
-                        startActivity(takehome);
+                        ParseUser currentUser = ParseUser.getCurrentUser();
+                        if (currentUser.containsKey("email")) { //Means people who have logged in using normal registration & not twitter
+                            //check verification status
+                            boolean verify = currentUser.getBoolean("emailVerified");
+                            if (!verify) {
+                                //NOT VERIFIED, send user back to LoginActivity.
+                                Toast.makeText(LoginActivity.this, "Please verify your email address", Toast.LENGTH_LONG).show();
+                                Intent takeUserHome = new Intent(LoginActivity.this, DiscoverActivity.class);
+                                startActivity(takeUserHome);
+
+                            }else{
+
+                                Toast.makeText(LoginActivity.this, "Welcome back!", Toast.LENGTH_LONG).show();
+                                //take user to homepage
+                                Intent takehome = new Intent(LoginActivity.this, DiscoverActivity.class);
+                                startActivity(takehome);
+                            }
+                        }
+
+
 
                     }else{
                     //error
