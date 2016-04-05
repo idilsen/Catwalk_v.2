@@ -50,6 +50,17 @@
             android:name=".EditActivity"
             android:label="Edit Profile"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="My Profile"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity
+            android:name=".NavigationActivity"
+            android:label="@string/title_activity_navigation"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        
+
     </application>
 
 </manifest>

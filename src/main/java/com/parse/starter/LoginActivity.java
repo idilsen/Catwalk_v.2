@@ -57,20 +57,17 @@ public class LoginActivity extends AppCompatActivity {
                             if (!verify) {
                                 //NOT VERIFIED, send user back to LoginActivity.
                                 Toast.makeText(LoginActivity.this, "Please verify your email address", Toast.LENGTH_LONG).show();
-                                Intent takeUserHome = new Intent(LoginActivity.this, DiscoverActivity.class);
+                                Intent takeUserHome = new Intent(LoginActivity.this, NavigationActivity.class);
                                 startActivity(takeUserHome);
 
                             }else{
 
                                 Toast.makeText(LoginActivity.this, "Welcome back!", Toast.LENGTH_LONG).show();
                                 //take user to homepage
-                                Intent takehome = new Intent(LoginActivity.this, DiscoverActivity.class);
+                                Intent takehome = new Intent(LoginActivity.this, NavigationActivity.class);
                                 startActivity(takehome);
                             }
                         }
-
-
-
                     }else{
                     //error
                         AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
